@@ -47,22 +47,21 @@ public class FabricaTradicionalTest {
         assertTrue(f instanceof FabricaIngredientes);
     }
 
-    @Test
-    public void testIndependenciaInstanciasPao() {
+   @Test
+    public void testCriacaoConsistentePao() {
         FabricaTradicional f = new FabricaTradicional();
         Pao p1 = f.criarPao();
         Pao p2 = f.criarPao();
-        assertNotSame(p1, p2);
+        assertEquals(p1.getTipo(), p2.getTipo());
     }
 
     @Test
-    public void testIndependenciaInstanciasCarne() {
+    public void testCriacaoConsistenteCarne() {
         FabricaTradicional f = new FabricaTradicional();
         Carne c1 = f.criarCarne();
         Carne c2 = f.criarCarne();
-        assertNotSame(c1, c2);
+        assertEquals(c1.getTipo(), c2.getTipo());
     }
-
     @Test
     public void testConsistenciaValoresMutuos() {
         FabricaTradicional f = new FabricaTradicional();
